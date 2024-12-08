@@ -1,0 +1,10 @@
+@use "ds5";
+
+:root {
+  --controller-img: url(starlight-blue-layout.png);
+  --face-button-color: hsl(202, 88%, 74%);
+  --face-button-color-pressed: hsl(202, 88%, 44%);
+  --face-button-text-color: #999;
+  --misc-button-color: #222;
+  --misc-button-color-pressed: #888;
+}

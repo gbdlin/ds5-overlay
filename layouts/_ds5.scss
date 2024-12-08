@@ -1,0 +1,339 @@
+@use "symbols";
+
+body {
+  background-color: rgba(0, 0, 0, 0); 
+  margin: 0 auto; 
+  overflow: hidden; 
+} 
+.controller.ds4{
+  background: var(--controller-img);
+  width: 749px;
+  height: 625px;
+  margin-left: 0;
+  margin-top: 0;
+} 
+
+.ds4 {
+  .dpad, .abxy {
+    .button, .face {
+      mask: url(elements.svg) 0 0 / 722px 402px;
+      background: var(--face-button-color);
+      color: var(--face-button-text-color);
+      box-sizing: border-box;
+
+      &:before {
+
+        font-family: "ds5-symbols";
+        font-style: normal;
+        font-weight: normal;
+        speak: never;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: 0.2em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: 0.2em;
+        /* font-size: 120%; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+      }
+
+      &.pressed {
+        background: var(--face-button-color-pressed);
+      }
+    }
+  }
+
+  .dpad {
+    position: absolute;
+    width: 118px;
+    height: 118px;
+    top: 176px;
+    left: 89.625px;
+
+    .face {
+      border-radius: 8px;
+      font-size: 21px;
+
+      &.up, &.down {
+        width: 40.359px;
+        height: 49.520px;
+        left: 39px;
+        text-align: center;
+      } 
+
+      &.left, &.right {
+        width: 49.520px;
+        height: 40.359px;
+        line-height: 40.359px;
+        top: 39px;
+      } 
+
+      &.up {
+        top: 0;
+        mask-position: -116.748px -200.165px;
+        padding-top: 3px;
+        
+        &:before { 
+          content: "\e805";
+        }
+      } 
+
+      &.down {
+        bottom: 0px;
+        mask-position: -116.759px -268.354px;
+        padding-top: 24px;
+        
+        &:before { 
+          content: "\e804";
+        }
+      } 
+
+      &.left {
+        left: 0;
+        mask-position: -78.078px -238.845px;
+        
+        &:before { 
+          content: "\e806";
+        }
+      } 
+
+      &.right {
+        right: 0;
+        mask-position: -146.263px -239.084px;
+        text-align: right;
+        
+        &:before { 
+          content: "\e807";
+        }
+      } 
+    }
+  }
+
+  .abxy {
+    width: 154px;
+    height: 154px;
+    left: 522px;
+    top: 158px;
+    filter: drop-shadow(0px 0px 2px #000);
+
+    .button {
+      width: 47.627px;
+      height: 47.627px;
+      line-height: 47.627px;
+      text-align: center;
+      font-size: 26px;
+
+      &.a, &.y {
+        left: 53px;
+      }
+
+      &.b, &.x {
+        top: 53px;
+      }
+
+      &.a {
+        mask-position: -560.570px -287.885px;
+        bottom: 0px;
+        
+        &:before { 
+          content: "\e803";
+        }
+      } 
+
+      &.b {
+        mask-position: -613.409px -235.061px;
+        right: 0px;
+        font-size: 32px;
+        
+        &:before { 
+          content: "\e802";
+        }
+      } 
+
+      &.x {
+        mask-position: -507.737px -235.061px;
+        left: 0px;
+        
+        &:before { 
+          content: "\e800";
+        }
+      } 
+      &.y {
+        mask-position: -560.570px -182.222px;
+        top: 0px;
+        line-height: 40px;
+        
+        &:before { 
+          content: "\e801";
+        }
+      }
+    } 
+  } 
+
+  .sticks {
+    width: 336px;
+    height: 84.548px;
+    left: 216px;
+    top: 291.5px;
+
+    .stick {
+      background: url(elements.svg) 0 0 / 722px 402px;
+      width: 84.548px;
+      height: 84.548px;
+      top: 0;
+
+      &.left {
+        background-position: -203.543px -314.446px;
+        left: 0;
+      }
+
+      &.right {
+        background-position: -433.593px -314.446px;
+        right: 0;
+      }
+
+      &.pressed {
+        filter: brightness(2.0);
+      }
+    } 
+  }
+
+  .arrows {
+    left: 195px;
+    top: 140px;
+    width: 358px;
+    height: 32.869px;
+
+    .back, .start {
+      mask: url(elements.svg) 0 0 / 722px 402px;
+      background: var(--face-button-color);
+      
+      width: 20.046px;
+      height: 32.869px;
+      opacity: 1;
+
+      &.pressed {
+        background: var(--face-button-color-pressed);
+      }
+    }
+
+    .back {
+      mask-position: -183.089px -163.736px;
+    }
+
+    .start {
+      float: right;
+      mask-position: -518.843px -163.736px;
+    }
+  }
+
+  .bumpers {
+    width: 544px;
+    height: 36px;
+    left: 102px;
+    top: 96px;
+
+    .bumper {
+      mask: url(elements.svg) 0 0 / 722px 402px;
+      background: var(--misc-button-color);
+      width: 96.343px;
+      height: 33.325px;
+      opacity: 1;
+
+      &.left {
+        mask-position: -89.087px -121.730px;
+      } 
+
+      &.right {
+        mask-position: -536.547px -121.730px;
+        transform: none;
+      } 
+
+      &.pressed {
+        background: var(--misc-button-color-pressed);
+      }
+    }
+  } 
+
+  .triggers {
+    width: 555px;
+    height: 97.328px;
+    left: 96px;
+    top: -3px;
+    position: relative;
+
+    .trigger, .trigger-button {
+      width: 105.403px;
+      height: 97.332px;
+      opacity: 1;
+      mask: url(elements.svg) 0 0 / 722px 402px;
+      display: block;
+      position: absolute;
+        top: 0;
+
+      &.left {
+        mask-position: -77.272px -3px;
+        left: 0;
+      }
+
+      &.right {
+        mask-position: -543.307px -3px;
+        transform: rotateY(0);
+        right: 0;
+      } 
+    } 
+
+    .trigger-button {
+      z-index: 1;
+      background: var(--misc-button-color);
+
+      &.pressed {
+        background: var(--misc-button-color-pressed);
+      }
+    }
+
+    .trigger {
+      z-index: 2;
+      display: none;
+      background: var(--misc-button-color-pressed);
+    }
+  } 
+
+
+  .touchpad {
+    width: 285.642px;
+    height: 155.304px;
+    position: absolute;
+    left: 231px;
+    top: 103px;
+    mask: url(elements.svg) -218.166px -127.196px / 722px 402px;
+    background: var(--face-button-color);
+
+    &.pressed {
+      background: var(--face-button-color-pressed);
+    } 
+  } 
+
+  .meta {
+    width: 46.016px;
+    height: 35.498px;
+    mask: url(elements.svg) -337.732px -333.475px / 722px 402px;
+    position: absolute;
+    left: 350px;
+    top: 310px;
+    background: var(--misc-button-color);
+
+    &.pressed {
+      background: var(--misc-button-color-pressed);
+    }
+  }
+
+  .quadrant, .fstick, .wheels { 
+    display: none; 
+  }
+}

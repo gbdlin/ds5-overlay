@@ -1,0 +1,10 @@
+@use "ds5";
+
+:root {
+  --controller-img: url(galactic-purple-layout.png);
+  --face-button-color: hsl(255, 55%, 41%);
+  --face-button-color-pressed: hsl(255, 55%, 55%);
+  --face-button-text-color: #aaa;
+  --misc-button-color: #222;
+  --misc-button-color-pressed: #888;
+}
