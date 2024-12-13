@@ -57,6 +57,13 @@
 .icon-right-dir:before {
   content: "\e807";
 } /* '' */
+:root {
+  --face-button-text-color: #aaa;
+  --misc-button-color: #222;
+  --misc-button-color-pressed: #888;
+  --misc-button-font-color: #555;
+}
+
 body {
   background-color: rgba(0, 0, 0, 0);
   margin: 0 auto;
@@ -288,14 +295,28 @@ body {
   position: absolute;
   top: 0;
 }
+.ds4 .triggers .trigger:before, .ds4 .triggers .trigger-button:before {
+  bottom: 8px;
+  font-size: 28px;
+  color: var(--misc-button-font-color);
+  position: absolute;
+}
 .ds4 .triggers .trigger.left, .ds4 .triggers .trigger-button.left {
   mask-position: -77.272px -3px;
   left: 0;
+}
+.ds4 .triggers .trigger.left:before, .ds4 .triggers .trigger-button.left:before {
+  content: "L2";
+  right: 12px;
 }
 .ds4 .triggers .trigger.right, .ds4 .triggers .trigger-button.right {
   mask-position: -543.307px -3px;
   transform: rotateY(0);
   right: 0;
+}
+.ds4 .triggers .trigger.right:before, .ds4 .triggers .trigger-button.right:before {
+  content: "R2";
+  left: 12px;
 }
 .ds4 .triggers .trigger-button {
   z-index: 1;

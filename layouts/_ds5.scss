@@ -1,5 +1,12 @@
 @use "symbols";
 
+:root {
+  --face-button-text-color: #aaa;
+  --misc-button-color: #222;
+  --misc-button-color-pressed: #888;
+  --misc-button-font-color: #555;
+}
+
 body {
   background-color: rgba(0, 0, 0, 0); 
   margin: 0 auto; 
@@ -274,17 +281,34 @@ body {
       mask: url(elements.svg) 0 0 / 722px 402px;
       display: block;
       position: absolute;
-        top: 0;
+      top: 0;
+
+      &:before {
+        bottom: 8px;
+        font-size: 28px;
+        color: var(--misc-button-font-color);
+        position: absolute;
+      }
 
       &.left {
         mask-position: -77.272px -3px;
         left: 0;
+        
+        &:before {
+          content: "L2";
+          right: 12px;
+        }
       }
 
       &.right {
         mask-position: -543.307px -3px;
         transform: rotateY(0);
         right: 0;
+        
+        &:before {
+          content: "R2";
+          left: 12px;
+        }
       } 
     } 
 
